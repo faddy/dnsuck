@@ -1,5 +1,7 @@
 # Fahad Ghani, fahadghani@cs.ucsb.edu
 
+## Sript to detect DNS spoofing
+
 from optparse import OptionParser
 import time
 from scapy.all import *
