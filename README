@@ -1,0 +1,11 @@
+A python script to detect DNS spoofing attacks. 
+
+The tool sniffs the network and looks for DNS requests to DNS servers.
+Then it detects if a certain request received multiple answers 
+that are different from each other.
+
+E.g. if a DNS request from 128.111.42.51 for www.google.com, with id 61172, to 128.111.1.1 (port 53) receives two different replies 
+(say one answer replies that the name has IP addresses 74.125.19.99 and 74.125.19.104 while the other reply says that the name would be mapped to 128.111.48.69), 
+the tool would output: 
+  DETECT: REQ: 61172 NAM: www.google.com SRC: 128.111.42.51:15655 DST: 128.111.1.1:53 
+  AN1: 74.125.19.99,74.125.19.104 AN2: 128.111.48.69 
